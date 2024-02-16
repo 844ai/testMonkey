@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "allowJs": true,
+        "lib": ["ESNext","DOM"],
+        "baseUrl": ".",
+        "types": [""] // 只要其他项目中引入你的 .d.ts 即可，也可以使用 三斜线指令 /// <reference types="xxx.d.ts" />  这样
+        //这个config文件没有配置 root include exclude  等等，所以它会找根目录下的所有 .ts 文件，所以你放在哪里它都找得到
+        
+    }
+}
