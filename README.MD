@@ -4,6 +4,8 @@
 
 ## 安装环境
 - vscode 安装testmonkey 插件，离线安装或在线安装插件；
+  - 离线安装方式：https://test.844.ai/download.html  下载testmonkey.vsix 文件
+
 
 ## 运行
 - 连接手机 ctrl + alt + F6
