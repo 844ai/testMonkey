@@ -54,10 +54,12 @@
         // let elements = await page.elements()
         // let item = flatElements(elements).find(item => item.text === '查看排行榜');
         // if(item){
+        //     let options = {};
+		//     options.ignoreScale = true;
         //     let { left , top , right , bottom  } = item.boundsInScreen ;
         //     let x = ( left + right ) / 2 ;
         //     let y = ( top + bottom ) / 2 ;
-        //     await page.tap(  x , y );
+        //     await page.tap(  x , y , options );
         // }
         // console.log( "item", JSON.stringify(item) );
         // await page.tapText("=查看排行榜");  // 和上面代码等效；
