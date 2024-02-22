@@ -26,6 +26,48 @@ declare class AppScreen {
      */
     setMetrics(width: number, height: number): void;
 
+    
+	/**
+	 * 获取屏幕尺寸
+	 * Retrieves the metrics (width and height) of the application screen.
+	 * @returns {Object} - The metrics of the screen.
+	 * @memberof Screen
+	 */
+    getMetrics(): { width: number, height: number };
+
+	/**
+	 * 按X轴缩放坐标值。
+	 * @param {number} x - 原始X坐标值。
+	 * @returns {number} - 缩放后的X坐标值。
+	 * @memberof Screen
+	 */
+    scaleX(x: number): number;
+
+	/**
+	 * 按Y轴缩放坐标值。
+	 * @param {number} y - 原始Y坐标值。
+	 * @returns {number} - 缩放后的Y坐标值。
+	 * @memberof Screen
+	 */
+    scaleY(y: number): number;
+
+	/**
+	 * 按X轴重新缩放坐标值。
+	 * @param {number} x - 缩放后的X坐标值。
+	 * @returns {number} - 重新缩放后的X坐标值。
+	 * @memberof Screen
+	 */
+    rescaleX(x: number): number;
+
+	/**
+	 * 按Y轴重新缩放坐标值。
+	 * @param {number} y - 缩放后的Y坐标值。
+	 * @returns {number} - 重新缩放后的Y坐标值。
+	 * @memberof Screen
+	 */
+    rescaleY(y: number): number;
+
+
     /**
      * 获取指定坐标像素的颜色。
      * @param x 像素的 x 坐标。
@@ -37,7 +79,6 @@ declare class AppScreen {
 
 // 在全局命名空间内声明 AppScreen 实例
 declare global {
-    var appScreen: AppScreen;
     var Screen: AppScreen;
 }
 
