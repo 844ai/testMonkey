@@ -1,4 +1,6 @@
-declare namespace AppSystem {
+
+
+declare global {
     /**
      * 使用给定的值显示一个 toast 消息。
      * @param value 要在 toast 中显示的消息。
@@ -43,4 +45,27 @@ declare namespace AppSystem {
      * @returns 剪贴板当前的内容。
      */
     function getClipboard(): string;
+
+    /**
+     * 点击剪切板，达到粘贴的效果
+     * 在当前聚焦的输入字段执行点击剪切板操作，模拟类似于Windows的Ctrl + V。需要配合copyToClipboard使用。
+     */
+    function clickClipboard(): void;
+
+    /**
+     * 模拟粘贴操作
+     * 在当前聚焦的输入字段执行粘贴操作，模拟类似于Windows的Ctrl + V。
+     */
+    function pasteFromClipboard(): void;
+
+    /**
+     * 粘贴文本
+     * 在当前聚焦的输入字段中粘贴给定的文本。
+     * @param text 要粘贴的文本。
+     */
+    function pasteText(text: string): void;
+    
 }
+
+// 使文件成为模块
+export {};

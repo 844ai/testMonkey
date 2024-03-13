@@ -1,44 +1,41 @@
-/**
- * 事件处理类，用于管理事件监听、触发和移除。
- */
 declare class AppEvent {
     /**
-     * 构造函数，初始化一个空的事件监听器对象。
+     * Initializes an empty event listener object.
      */
     constructor();
 
     /**
-     * 添加事件监听器，将监听器函数添加到特定事件的监听器列表中。
-     * @param event 事件名称
-     * @param listener 要添加的事件监听器函数
+     * Adds an event listener function to the list of listeners for a specific event.
+     * @param event The name of the event.
+     * @param listener The event listener function to add.
      */
-    addEventListener(event: string, listener: (data?: any) => void): void;
+    addEventListener(event: string, listener: Function): void;
 
     /**
-     * 移除事件监听器，从特定事件的监听器列表中移除指定的监听器函数。
-     * 如果未提供特定监听器，则移除整个事件的监听器列表。
-     * @param event 事件名称
-     * @param listener 要移除的事件监听器函数
+     * Removes an event listener function from the list of listeners for a specific event.
+     * If the listener is not provided, it removes all listeners for the event.
+     * @param event The name of the event.
+     * @param listener The event listener function to remove.
      */
-    removeEventListener(event: string, listener?: (data?: any) => void): void;
+    removeEventListener(event: string, listener?: Function): void;
 
     /**
-     * 触发特定事件，调用该事件对应的所有监听器函数并传递特定的数据。
-     * @param event 要触发的事件名称
-     * @param data 要传递给监听器函数的数据
+     * Triggers a specific event and calls all the associated listeners with the provided data.
+     * @param event The name of the event to trigger.
+     * @param data The data to pass to the listener functions.
      */
-    dispatchEvent(event: string, data?: any): void;
+    dispatchEvent(event: string, data: any): void;
 
     /**
-     * 移除所有事件监听器，清空监听器对象。
+     * Removes all event listeners and clears the listener object.
      */
     removeAllEventListeners(): void;
 }
 
+// Declare instance of AppEvent in the global namespace
 declare global {
-    var page____AppEvent____Object: AppEvent;
     var App: AppEvent;
 }
 
-// 使文件成为模块
+// Make the file a module
 export {};

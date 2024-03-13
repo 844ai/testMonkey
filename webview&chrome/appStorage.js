@@ -3,17 +3,17 @@
 (async function() {
     try{
         page.evaluate(()=> {
-            appStorage.setItem("age", "10" )
-            console.log("appStorage get 1:" , appStorage.getItem("age" ) )
-            alert("value:" + appStorage.getItem("age" ) );
+            AppStorage.setItem("age", "10" )
+            console.log("AppStorage get 1:" , AppStorage.getItem("age" ) )
+            alert("value:" + AppStorage.getItem("age" ) );
             
-            appStorage.setItem("age", 20 )
-            console.log("appStorage get 2:" , appStorage.getItem("age" ) )
-            alert("value:" + appStorage.getItem("age" ) );
+            AppStorage.setItem("age", 20 )
+            console.log("AppStorage get 2:" , AppStorage.getItem("age" ) )
+            alert("value:" + AppStorage.getItem("age" ) );
             
-            appStorage.setItem("age", null )
-            console.log("appStorage get 3:" , appStorage.getItem("age" ) )
-            alert("value:" + appStorage.getItem("age" ) );        
+            AppStorage.setItem("age", null )
+            console.log("AppStorage get 3:" , AppStorage.getItem("age" ) )
+            alert("value:" + AppStorage.getItem("age" ) );        
         })        
      }catch(e){
          console.log('script run error:' ,e)

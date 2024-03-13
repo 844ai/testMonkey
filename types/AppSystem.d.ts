@@ -1,4 +1,4 @@
-declare namespace AppSystem {
+declare global {
     /**
      * 打开应用。
      * @param packageName 应用的包名。
@@ -151,3 +151,6 @@ declare namespace AppSystem {
      */
     function decodeURI(uri: string): string;
 }
+
+// 使文件成为模块
+export {};

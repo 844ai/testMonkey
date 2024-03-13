@@ -61,7 +61,8 @@ declare namespace AppHttp {
     }
 }
 
-declare var axios: AppHttp.AppHttpInstance;
+declare global {
+    var axios: AppHttp.AppHttpInstance;
+}
 
-// 使文件成为模块
 export {};

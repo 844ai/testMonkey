@@ -1,5 +1,5 @@
 // AppPage.d.ts
-declare class AppPage {
+declare class ChromePage {
     Version: string;
     getAppPageInject(): any;
     title(): Promise<string>;
@@ -31,14 +31,54 @@ declare class AppPage {
     swipeRight(x?: number, y?: number, duration?: number): Promise<void>;
     home(): Promise<void>;
     getActiveElement(): Promise<any>;
+    debug: boolean;
+    environment: string; // This should be more specific based on your actual environment values.
+    pendingEvents: Map<string, any>; // Consider defining a more specific type for the event map values.
+
+    constructor();
+
+    // Type method for typing text into an element
+    type(selector: string, text: string, options?: { delay?: number, autoCorrect?: boolean }): Promise<void>;
+
+    // Methods for waiting for conditions
+    waitFor(selectorOrFunctionOrTimeout: string | (() => boolean) | number, options?: any, ...args: any[]): Promise<void>;
+    waitForSelector(selector: string, options?: { timeout?: number, pollingInterval?: number, visible?: boolean, hidden?: boolean }): Promise<ChromeElement>;
+    waitForFunction(pageFunction: () => boolean | string, options?: { timeout?: number, polling?: 'raf' | number }, ...args: any[]): Promise<void>;
+
+    // Method for taking a screenshot
+    screenshot(options?: { format?: 'png' | 'jpeg' }): Promise<string>;
+
+    // Method for uploading a file
+    uploadFile(selector: string, fileContent: string | ArrayBuffer | Blob): Promise<void>;
+
+    // Methods for evaluating scripts
+    eval(code: string, options?: { debug?: boolean }): Promise<any>;
+    evaluate(fnOrString: Function | string, ...args: any[]): Promise<any>;
+
+    // Internal method for executing scripts, consider making private or protected
+    _execute(functionString: string, eventId: string): Promise<void>;
+
+
 }
 
-declare class AppElement {
-    page: AppPage;
+
+
+declare class ChromeElement {
+    page: ChromePage;
     selector: string;
-    constructor(page: AppPage, selector: string, nodeInfo: any);
-    click(options?: { clickCount?: number; delay?: number }): Promise<void>;
-    type(text: string, options?: { delay?: number; autoCorrect?: boolean }): Promise<void>;
+
+    constructor(page: ChromePage, selector: string);
+
+    // Method for clicking an element
+    click(options?: { button?: 'left' | 'right' | 'middle', clickCount?: number, delay?: number }): Promise<void>;
+
+    // Method for typing text into the element
+    type(text: string, options?: { delay?: number, autoCorrect?: boolean }): Promise<void>;
+
+    // Method for uploading a file to the element
+    uploadFile(fileContent: string | ArrayBuffer | Blob): Promise<void>;
 }
 
-declare var page: AppPage;
+
+// Assuming these are exposed globally
+declare var page: ChromePage;

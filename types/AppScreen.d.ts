@@ -35,6 +35,62 @@ declare class AppScreen {
 	 */
     getMetrics(): { width: number, height: number };
 
+	
+	/**
+	 * 获取屏幕密度
+	 * Retrieves the density of the application screen.
+	 * @returns {number} - The density of the screen.
+	 * @memberof Screen
+	 */
+	getDensity(): number;
+
+	/**
+	 * 获取屏幕方向
+	 * Retrieves the orientation of the application screen.
+	 * @returns {string} - The orientation of the screen.
+	 * @memberof Screen
+	 */
+	getOrientation(): string;
+
+	/**
+	 * 获取屏幕旋转角度
+	 * Retrieves the rotation of the application screen.
+	 * @returns {number} - The rotation of the screen.
+	 * @memberof Screen
+	 */
+	getRotation(): number;
+
+	/**
+	 * 检查是否为竖屏
+	 * Checks if the application screen is in portrait mode.
+	 * @returns {boolean} - A boolean indicating whether the screen is in portrait mode or not.
+	 * @memberof Screen
+	 */
+	isPortrait(): boolean;
+
+	/**
+	 * 检查是否为横屏
+	 * Checks if the application screen is in landscape mode.
+	 * @returns {boolean} - A boolean indicating whether the screen is in landscape mode or not.
+	 * @memberof Screen
+	 */
+	isLandscape(): boolean;
+		
+	/**
+	 * 获取屏幕宽度
+	 * Retrieves the width of the screen.
+	 * @returns {number} - The width of the screen.
+	 */
+	getWidth(): number;
+
+	/**
+	 * 获取屏幕高度
+	 * Retrieves the height of the screen.
+	 * @returns {number} - The height of the screen.
+	 */
+	getHeight(): number;
+
+
 	/**
 	 * 按X轴缩放坐标值。
 	 * @param {number} x - 原始X坐标值。
@@ -79,6 +135,7 @@ declare class AppScreen {
 
 // 在全局命名空间内声明 AppScreen 实例
 declare global {
+	// @ts-ignore
     var Screen: AppScreen;
 }
 

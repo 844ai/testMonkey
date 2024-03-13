@@ -1,43 +1,7 @@
 
-// 	@V8Function
-// 	fun loadUrl(url: String) {
-// 		webView.loadUrl(url)
-// 	}
-
-// 	@V8Function
-// 	fun reload(url: String) {
-// 		webView.reload()
-// 	}
-
-// 	@V8Function
-// 	fun getUserAgent():String{
-// 		return GlobalApp.engine.getCachedUserAgent()
-// 	}
-
-
-// 	@V8Function
-// 	fun setUserAgent(value:String){
-// //		必须同1线程中执行
-// 		GlobalApp.engine.setUserAgent(value)
-// 	}
-
-// 	@V8Function
-// 	fun setPc(){
-// //		必须同1线程中执行
-// 		val value = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
-// 		GlobalApp.engine.setUserAgent(value)
-// 	}
-// 	@V8Function
-// 	fun setMobile(){
-// //		必须同1线程中执行
-// 		val value = "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
-// 		GlobalApp.engine.setUserAgent(value)
-// 	}
-
-
 /**
  * 缓存数据，类似于 localStorage，但是是应用级别的存储，不会因为清除缓存而被清除。
- * @class appStorage
+ * @class webView
  */
 // 报错是因为这里不是一个模块
 declare global {
